@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <h1 id="site-title">My first landing</h1>
+        <!-- aria-label для accessibility -->
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <!-- щоб програма, яка читає екран, могла повідомити користувачеві, що він знаходиться вже на поточній сторінці -->
+                <li><a href="index.html" aria-current="page">Main</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <article class="about-intro">
+            <header>
+                <h2>Про нашу команду</h2>
+                <p>Команда студентів, що створила навчальний веб-проект у межах курсу «Веб-програмування (1 семестр)».
+                </p>
+            </header>
+        </article>
+
+        <article aria-labelledby="skills-title" class="skills">
+            <h3 id="skills-title">Наші навички</h3>
+            <ul>
+                <li>HTML, семантика, доступність</li>
+                <li>CSS, адаптивна верстка</li>
+                <li>JavaScript, робота з DOM</li>
+            </ul>
+            </section>
+
+            <section aria-labelledby="history-title" class="history">
+                <h3 id="history-title">Історія</h3>
+                <dl>
+                    <dt>2023</dt>
+                    <dd>Перші навчальні проекти</dd>
+                    <dt>2024</dt>
+                    <dd>Командний пет-проект та хакатон</dd>
+                    <dt>2025</dt>
+                    <dd>Запуск навчального центру</dd>
+                </dl>
+            </section>
+    </main>
+
+    <aside class="sidebar" aria-label="Додаткова інформація">
+        <h3>Інші</h3>
+        <ul>
+            <li>Акцент коду та прозорість</li>
+            <li>Навчання через практику</li>
+            <li>Комнікація та партнери</li>
+        </ul>
+    </aside>
+    <footer class="site-footer">
+        <p>© 2025 Group: 6.1213-1</p>
+    </footer>
+</body>
+
+</html>
