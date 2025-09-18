@@ -4,12 +4,98 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Лабораторна 1</title>
+    <meta name="description" content="Головна сторінка навчального лендінгу: новини, послуги, переваги." />
+    <!-- вказується відносний шлях до файлу -->
+    <link rel="icon" href="assets/imgs/favicon.ico">
+    <title>Лабораторна 2</title>
 </head>
 
 <body>
-    <p>Студент: Гринь А.Р.</p>
-    <p>Група: 6.1213-1</p>
+    <!-- це посилання дозволяє користувачам обмеженими можливостями швидко пропустити навігацію і перейти до основного контенту. -->
+    <a href="#main" class="skip-link">Move to main content</a>
+    <header class="site-header">
+        <h1 id="site-title">My first landing</h1>
+        <!-- aria-label для accessibility -->
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <!-- щоб програма, яка читає екран, могла повідомити користувачеві, що він знаходиться вже на поточній сторінці -->
+                <li><a href="index.html" aria-current="page">Main</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- основний контент сторінки -->
+    <main id="main">
+        <!-- логіна одиниця контенту -->
+        <article class="hero-article">
+            <header>
+                <h2>News</h2>
+            </header>
+            <p>Hryn Artem started working on the html framework</p>
+            <figure>
+                <img src="assets/imgs/arashiyma-seuh.png" alt="">
+                <figcaption>Imaage for news</figcaption>
+            </figure>
+        </article>
+    </main>
+
+    <!-- секція для списку переваг -->
+    <section aria-labelledby="benefits-title" class="benefits">
+        <h3 id="benefits-title">Our Advantages</h3>
+        <ul class="advantages">
+            <li>High-quality technology</li>
+            <li>Company focused on customers</li>
+            <li>Quick response to requests</li>
+        </ul>
+    </section>
+
+    <!-- aria-labelledby="services-title" для скрінрідерів, це допомогає людям з обмеженими можливосятми розуміти, про що йде мова -->
+    <section aria-labelledby="services-title" class="services">
+        <h2 id="services-title">Our Services</h2>
+        <!-- таблиця з послугами -->
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Service</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Website Development</td>
+                    <td>Laanding or small corporate website</td>
+                    <td>500 $</td>
+                </tr>
+                <tr>
+                    <td>SEO Optimization</td>
+                    <td>Базовий аудит та покращення видимості</td>
+                    <td>300 $</td>
+                </tr>
+                <tr>
+                    <td>Content Creation</td>
+                    <td>Оновлення та тех.допомога</td>
+                    <td>200 $</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- додатковий контент -->
+    <!-- aria-label="Additional Information" для доступності -->
+    <aside class="sidebar" aria-label="Additional Information">
+        <h3>Useful Resources</h3>
+        <ul>
+            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+        </ul>
+    </aside>
+
+    <!-- підвал сторінки -->
+    <footer class="site-footer">
+        <p>© 2025 Group: 6.1213-1</p>
+    </footer>
 </body>
 
 </html>
