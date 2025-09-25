@@ -7,39 +7,70 @@
     <meta name="description" content="Головна сторінка навчального лендінгу: новини, послуги, переваги." />
     <!-- вказується відносний шлях до файлу -->
     <link rel="icon" href="assets/imgs/favicon.ico">
-    <title>Лабораторна 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Лабораторна 3</title>
 </head>
 
 <body>
     <!-- це посилання дозволяє користувачам обмеженими можливостями швидко пропустити навігацію і перейти до основного контенту. -->
     <a href="#main" class="skip-link">Move to main content</a>
-    <header class="site-header">
-        <h1 id="site-title">My first landing</h1>
+    <header class="header">
+        <h1 id="header__title">My first landing</h1>
         <!-- aria-label для accessibility -->
-        <nav class="site-nav" aria-label="Main navigation">
-            <ul>
+        <nav class="nav" aria-label="Main navigation">
+            <ul class="nav__list">
                 <!-- щоб програма, яка читає екран, могла повідомити користувачеві, що він знаходиться вже на поточній сторінці -->
-                <li><a href="index.html" aria-current="page">Main</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
+                <li class="nav__item"><a class="nav__link" href="index.html" aria-current="page">Main</a></li>
+                <li class="nav__item"><a class="nav__link" href="about.html">About us</a></li>
+                <li class="nav__item"><a class="nav__link" href="contacts.html">Contacts</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- основний контент сторінки -->
-    <main id="main">
+    <main class="main">
         <!-- логіна одиниця контенту -->
-        <article class="hero-article">
-            <header>
-                <h2>News</h2>
-            </header>
-            <p>Hryn Artem started working on the html framework</p>
-            <figure>
-                <img src="assets/imgs/arashiyma-seuh.png" alt="">
-                <figcaption>Imaage for news</figcaption>
+        <article class="news">
+            <h2 class="news__title">News</h2>
+            <p class="news__text">Hryn Artem started working on the lab 3</p>
+            <figure class="media article__media media--framed">
+                <img src="assets/imgs/arashiyma-seuh.png" alt="" class="media__img">
+                <figcaption class="media__caption">Image for news</figcaption>
             </figure>
         </article>
+
+        <section aria-labelledby="services-title" class="services">
+            <h2 id="services-title" class="services__title">Our Services</h2>
+            <!-- таблиця з послугами -->
+            <table class="services__table">
+                <thead class="services__table-head">
+                    <tr class="services__table-row">
+                        <th scope="col" class="services__table-header">Service</th>
+                        <th scope="col" class="services__table-header">Description</th>
+                        <th scope="col" class="services__table-header">Price</th>
+                    </tr>
+                </thead>
+                <tbody class="services__table-body">
+                    <tr class="services__table-row">
+                        <td class="services__table-cell">Website Development</td>
+                        <td class="services__table-cell">Landing or small corporate website</td>
+                        <td class="services__table-cell">500 $</td>
+                    </tr>
+                    <tr class="services__table-row">
+                        <td class="services__table-cell">SEO Optimization</td>
+                        <td class="services__table-cell">Базовий аудит та покращення видимості</td>
+                        <td class="services__table-cell">300 $</td>
+                    </tr>
+                    <tr class="services__table-row">
+                        <td class="services__table-cell">Content Creation</td>
+                        <td class="services__table-cell">Оновлення та тех.допомога</td>
+                        <td class="services__table-cell">200 $</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
+
 
     <!-- секція для списку переваг -->
     <section aria-labelledby="benefits-title" class="benefits">
@@ -52,49 +83,19 @@
     </section>
 
     <!-- aria-labelledby="services-title" для скрінрідерів, це допомогає людям з обмеженими можливосятми розуміти, про що йде мова -->
-    <section aria-labelledby="services-title" class="services">
-        <h2 id="services-title">Our Services</h2>
-        <!-- таблиця з послугами -->
-        <table>
-            <thead>
-                <tr>
-                    <th scope="col">Service</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Website Development</td>
-                    <td>Laanding or small corporate website</td>
-                    <td>500 $</td>
-                </tr>
-                <tr>
-                    <td>SEO Optimization</td>
-                    <td>Базовий аудит та покращення видимості</td>
-                    <td>300 $</td>
-                </tr>
-                <tr>
-                    <td>Content Creation</td>
-                    <td>Оновлення та тех.допомога</td>
-                    <td>200 $</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
 
     <!-- додатковий контент -->
     <!-- aria-label="Additional Information" для доступності -->
-    <aside class="sidebar" aria-label="Additional Information">
-        <h3>Useful Resources</h3>
-        <ul>
-            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
+    <aside class="sidebar sidebar--links" aria-label="Additional Information">
+        <h3 class="sidebar__title">Useful Resources</h3>
+        <ul class="sidebar__list">
+            <li class="sidebar__item"><a class="sidebar__link" href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></li>
         </ul>
     </aside>
 
     <!-- підвал сторінки -->
-    <footer class="site-footer">
-        <p>© 2025 Group: 6.1213-1</p>
+    <footer class="footer">
+        <p class="footer__text">© 2025 Group: 6.1213-1</p>
     </footer>
 </body>
 
