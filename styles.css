@@ -43,175 +43,504 @@ input:focus, textarea:focus, button:focus {
   outline: none;
 }
 
-/* ===== VARIABLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+
+
+/* styles.css */
 :root {
-  --color-primary: #2a7ae2;     
-  --color-primary-hover: #1f5fb5;
-  --color-secondary: #f5f5f5;      
-  --color-border: #ccc;         
-  --color-error: #e63946;       
-
-  --font-family-base: "Segoe UI", Arial, sans-serif;
-  --font-size-base: 16px;
-  --font-size-title: 24px;
-  --font-size-subtitle: 18px;
-
-  --spacing-small: 8px;
-  --spacing-medium: 16px;
-  --spacing-large: 24px;
+  /* Твої старі змінні */
+  --brand: #002b5c;
+  --brand-light: #4a90e2;
+  --accent: #ff6b35;
+  --bg: #f8f9fa;
+  --text: #333;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --radius: 0.5rem;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+  
+  /* Нові для футера (щоб стилі працювали) */
+  --surface: var(--brand);  /* Темно-синій фон футера */
+  --border: #ddd;  /* Сіра межа */
+  --fg-muted: #666;  /* Мутний сірий для лейблів */
+  --container: 1200px;  /* Max-width для контенту */
 }
 
-/* ===== HEADER ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { font-size: 16px; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul, ol { list-style: none; margin: 0; padding: 0; }
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--brand);
+  color: white;
+  padding: var(--space-1) var(--space-2);
+  text-decoration: none;
+  z-index: 100;
+}
+.skip-link:focus { top: 6px; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;  /* Збільшили aside до 300px, main — решта */
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "sidenav main"
+    "footer footer";
+  min-height: 100vh;
+}
+
+.header { grid-area: header; }
+.sidenav { grid-area: sidenav; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+
 .header {
-  background: #fff;
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--spacing-medium);
-  margin-bottom: var(--spacing-large);
+  background: var(--brand);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--brand-light);
 }
 
-#header__title {
-  margin-bottom: var(--spacing-small);
+.header-title {
+  margin: var(--space-2) 0;
+  font-size: 1.5rem;
+  color: white;
 }
 
-.nav__list {
+.nav {
   display: flex;
-  gap: var(--spacing-medium);
+  gap: var(--space-2);
+  border-top: 1px solid var(--brand-light);
 }
 
-.nav__link {
-  font-weight: bold;
+.nav-link {
+  color: var(--brand-light);
+  font-weight: 600;
+  padding: var(--space-1) 0;
+  border-radius: var(--radius);
 }
 
-/* ===== MAIN CONTENT ===== */
-.main {
-  max-width: 800px;
-  margin: var(--spacing-large) auto;
-  padding: var(--spacing-medium);
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
+.nav-link:hover {
+  background: var(--brand-light);
+  color: var(--brand);
 }
 
-.about-article__title {
-  font-size: var(--font-size-title);
-  margin-bottom: var(--spacing-small);
-  color: var(--color-primary);
+.nav-link--cta {
+  margin-left: auto;
 }
 
-.about-article__text {
-  font-size: var(--font-size-base);
-  color: #333;
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-right: 1px solid var(--brand-light);
 }
 
-.skills__title,
-.history h3,
+.sidebar {
+  background: white;
+  border: 1px solid var(--border);
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
 .sidebar__title {
-  font-size: var(--font-size-subtitle);
-  margin-bottom: var(--spacing-small);
+  margin-bottom: var(--space-3);
+  font-size: 1rem;
+  color: var(--brand);
+}
+
+.sidebar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar__item {
+  color: var(--text);
+}
+
+.sidebar__link {
+  color: var(--brand);
+  padding: var(--space-1);
+  border-radius: var(--radius);
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar__link:hover {
+  background: var(--bg);
+  color: var(--accent);
+}
+
+.sidebar__link:hover {
+  background: var(--bg);
+  color: var(--brand);
+}
+
+/* Стилі для секції новин, інтегровані з :root змінними з лабораторної */
+.news-section {
+  margin-bottom: var(--space-5);
+}
+
+.news-title {
+  margin: 0 var(--space-4) var(--space-3);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.news-container {
+  margin: 0 auto;
+  max-width: var(--container);
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+}
+
+.news-item {
+  list-style: none;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.news-image {
+  margin: 0;
+  height: 200px;
+  overflow: hidden;
+}
+
+.news-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.news-card-title {
+  margin: var(--space-3) var(--space-3) var(--space-2);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--brand);
+  line-height: 1.3;
+}
+
+.news-card-excerpt {
+  margin: 0 var(--space-3) var(--space-3);
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.news-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 var(--space-3) var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+
+.news-card-date {
+  color: var(--fg-muted);
+  font-weight: 500;
+}
+
+.news-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  background: var(--brand);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+/* Додаткові прості стилі для about.html, інтегровані з :root */
+
+.about-article {
+  margin-bottom: var(--space-4);
+  padding: var(--space-3);
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-title {
+  font-size: 1.8rem;
+  color: var(--brand);
+  margin-bottom: var(--space-2);
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: var(--text);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.skills-section {
+  padding: var(--space-3);
+  background: var(--bg);
+  border-radius: var(--radius);
+}
+
+.skills-title {
+  font-size: 1.5rem;
+  color: var(--brand);
+  margin-bottom: var(--space-2);
+  text-align: center;
 }
 
 .skills-list {
-  padding-left: 20px;
-}
-
-.skills-list__item,
-.history dt,
-.history dd,
-.sidebar__item {
-  margin-bottom: var(--spacing-small);
-}
-
-.history dt {
-  font-weight: bold;
-}
-
-.history dd {
-  margin-left: 15px;
-}
-
-/* ===== CONTACT FORM ===== */
-.contact-form__title {
-  font-size: var(--font-size-title);
-  margin-bottom: var(--spacing-small);
-  color: var(--color-primary);
-}
-
-.contact-form__description {
-  font-size: var(--font-size-base);
-  margin-bottom: var(--spacing-medium);
-  color: #555;
-}
-
-.contact-form__body {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-medium);
+  gap: var(--space-1);
+  list-style: none;
+}
+
+.skills-item {
+  padding: var(--space-2);
+  background: white;
+  border-radius: var(--radius);
+  text-align: center;
+  font-weight: 600;
+  color: var(--brand);
+  box-shadow: var(--shadow);
+}
+
+/* Стилі для contacts.html з BEM, інтегровані з :root з лаб №4 */
+.contact-section {
+  padding: var(--space-4);
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.contact-section__title {
+  font-size: 1.75rem;
+  color: var(--brand);
+  margin-bottom: var(--space-2);
+  text-align: center;
+  font-weight: 600;
+}
+
+.contact-section__description {
+  font-size: 1rem;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
 .contact-form__row {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2);
+  align-items: start;
 }
 
 .contact-form__label {
-  margin-bottom: var(--spacing-small);
-  font-weight: bold;
+  font-weight: 600;
+  color: var(--brand);
+  white-space: nowrap;
+  padding-top: 0.5rem;
 }
 
 .contact-form__input,
 .contact-form__textarea {
-  padding: var(--spacing-small);
-  font-size: var(--font-size-base);
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
+  padding: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
+}
+
+.contact-form__textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 .contact-form__input:focus,
 .contact-form__textarea:focus {
-  border-color: var(--color-primary);
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.1);
+}
+
+.contact-form__input:invalid,
+.contact-form__textarea:invalid {
+  border-color: #e74c3c;
 }
 
 .contact-form__button {
-  padding: var(--spacing-small) var(--spacing-medium);
-  font-size: var(--font-size-base);
-  background-color: var(--color-primary);
-  color: #fff;
-  border-radius: 4px;
+  justify-self: start;
+  background: var(--brand);
+  color: white;
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  grid-column: 1 / -1;  /* Повна ширина для кнопки */
 }
 
-.contact-form__button:hover {
-  background-color: var(--color-primary-hover);
-}
-
-/* ===== SIDEBAR ===== */
-.sidebar {
-  max-width: 800px;
-  margin: var(--spacing-large) auto;
-  padding: var(--spacing-medium);
-  background-color: var(--color-secondary);
-  border-left: 4px solid var(--color-primary);
-  border-radius: 4px;
-}
-
-.sidebar__list {
-  padding-left: 0;
-}
-
-.sidebar__link {
-  color: var(--color-primary);
-  transition: color 0.3s ease;
-}
-
-.sidebar__link:hover {
-  color: var(--color-primary-hover);
-}
-
-.benefits {
-    text-align: center;
+.contact-form__button:hover,
+.contact-form__button:focus-visible {
+  background: var(--brand-light);
+  outline: none;
 }
 
 .footer {
-    text-align: center;
+  background: var(--surface);
+  color: white;
+  border-top: 1px solid var(--border);
+  padding: var(--space-3) 0;
+  margin-top: auto;
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+  align-items: start;
+}
+
+.footer-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-size: 1rem;
+  margin-bottom: var(--space-2);
+  color: var(--brand-light);
+  font-weight: 700;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-item {
+  color: white;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+.footer__text {
+  text-align: center;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border);
+  margin: 0 var(--space-5);
+  font-size: 0.9rem;
+  color: white;
+}
+
+address {
+  font-style: normal;
+}
+
+.footer-group address ul {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.footer-group address .footer-item {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1);
+  align-items: baseline;
+}
+
+.footer-label {
+  color: var(--fg-muted);
+  white-space: nowrap;
+  font-weight: 600;
 }
