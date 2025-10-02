@@ -1,102 +1,138 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="uk">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Головна сторінка навчального лендінгу: новини, послуги, переваги." />
-    <!-- вказується відносний шлях до файлу -->
+    <meta name="description" content="Головна сторінка: новини." />
     <link rel="icon" href="assets/imgs/favicon.ico">
     <link rel="stylesheet" href="styles.css">
-    <title>Лабораторна 3</title>
+    <title>Головна - Лабораторна №4</title>
 </head>
 
 <body>
-    <!-- це посилання дозволяє користувачам обмеженими можливостями швидко пропустити навігацію і перейти до основного контенту. -->
-    <a href="#main" class="skip-link">Move to main content</a>
-    <header class="header">
-        <h1 id="header__title">My first landing</h1>
-        <!-- aria-label для accessibility -->
-        <nav class="nav" aria-label="Main navigation">
-            <ul class="nav__list">
-                <!-- щоб програма, яка читає екран, могла повідомити користувачеві, що він знаходиться вже на поточній сторінці -->
-                <li class="nav__item"><a class="nav__link" href="index.html" aria-current="page">Main</a></li>
-                <li class="nav__item"><a class="nav__link" href="about.html">About us</a></li>
-                <li class="nav__item"><a class="nav__link" href="contacts.html">Contacts</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="layout">
+        <a href="#main" class="skip-link">Перейти до основного контенту</a>
+        <header class="header">
+            <h1 class="header-title">Лабораторна №4</h1>
+            <nav class="nav" aria-label="Головна навігація">
+                <a href="index.html" class="nav-link" aria-current="page">Головна</a>
+                <a href="about.html" class="nav-link">Про нас</a>
+                <a href="contacts.html" class="nav-link nav-link--cta">Контакти</a>
+            </nav>
+        </header>
 
-    <!-- основний контент сторінки -->
-    <main class="main">
-        <!-- логіна одиниця контенту -->
-        <article class="news">
-            <h2 class="news__title">News</h2>
-            <p class="news__text">Hryn Artem started working on the lab 3</p>
-            <figure class="media article__media media--framed">
-                <img src="assets/imgs/arashiyma-seuh.png" alt="" class="media__img">
-                <figcaption class="media__caption">Image for news</figcaption>
-            </figure>
-        </article>
+        <aside class="sidenav">
+            <section class="sidebar sidebar-nav--links" aria-label="Корисні посилання">
+                <h2 class="sidebar__title">Корисні посилання</h2>
+                <ul class="sidebar__list">
+                    <li class="sidebar__item"><a href="https://developer.mozilla.org/" class="sidebar__link"
+                            target="_blank" rel="noopener">MDN Web Docs</a></li>
+                </ul>
+            </section>
+            <section class="sidebar sidebar-nav--links" aria-label="Цінності">
+                <h2 class="sidebar__title">Цінності</h2>
+                <ul class="sidebar__list">
+                    <li class="sidebar__item">Якість коду та прозорість</li>
+                    <li class="sidebar__item">Навчання через практику</li>
+                    <li class="sidebar__item">Комунікація та підтримка</li>
+                </ul>
+            </section>
+            <section class="sidebar sidebar-nav--links" aria-label="Соціальні мережі">
+                <h2 class="sidebar__title">Соціальні мережі</h2>
+                <ul class="sidebar__list">
+                    <li class="sidebar__item"><a href="#!" class="sidebar__link">Facebook</a></li>
+                    <li class="sidebar__item"><a href="#!" class="sidebar__link">IG</a></li>
+                    <li class="sidebar__item"><a href="#!" class="sidebar__link">LinkedIn</a></li>
+                </ul>
+            </section>
+        </aside>
 
-        <section aria-labelledby="services-title" class="services">
-            <h2 id="services-title" class="services__title">Our Services</h2>
-            <!-- таблиця з послугами -->
-            <table class="services__table">
-                <thead class="services__table-head">
-                    <tr class="services__table-row">
-                        <th scope="col" class="services__table-header">Service</th>
-                        <th scope="col" class="services__table-header">Description</th>
-                        <th scope="col" class="services__table-header">Price</th>
-                    </tr>
-                </thead>
-                <tbody class="services__table-body">
-                    <tr class="services__table-row">
-                        <td class="services__table-cell">Website Development</td>
-                        <td class="services__table-cell">Landing or small corporate website</td>
-                        <td class="services__table-cell">500 $</td>
-                    </tr>
-                    <tr class="services__table-row">
-                        <td class="services__table-cell">SEO Optimization</td>
-                        <td class="services__table-cell">Базовий аудит та покращення видимості</td>
-                        <td class="services__table-cell">300 $</td>
-                    </tr>
-                    <tr class="services__table-row">
-                        <td class="services__table-cell">Content Creation</td>
-                        <td class="services__table-cell">Оновлення та тех.допомога</td>
-                        <td class="services__table-cell">200 $</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-    </main>
+        <main class="main" id="main">
+            <section class="news-section">
+                <h2 class="news-title">Новини</h2>
+                <div class="news-container">
+                    <ul class="news-list">
+                        <li class="news-item">
+                            <article class="news-card">
+                                <figure class="news-image">
+                                    <img src="assets/imgs/arashiyma-seuh.png" alt="Ото зображення" loading="lazy"
+                                        decoding="async">
+                                </figure>
+                                <h3 class="news-card-title">Створення першого проекту</h3>
+                                <p class="news-card-excerpt">Тимчасовий текст для демонстрації можливості створення
+                                    сторінки за допомогою HTML, CSS, JS та React...</p>
+                                <div class="news-card-meta">
+                                    <time class="news-card-date" datetime="2025-09-10">10 вер 2025</time>
+                                    <a href="#" class="news-card-btn">Читати далі</a>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="news-item">
+                            <article class="news-card">
+                                <figure class="news-image">
+                                    <img src="assets/imgs/arashiyma-seuh.png" alt="Демонстрація навчання" loading="lazy"
+                                        decoding="async">
+                                </figure>
+                                <h3 class="news-card-title">Flexbox + Grid: практика</h3>
+                                <p class="news-card-excerpt">Для отримання навичок побудови каркасу сторінки на
+                                    Grid-областях та компонування контенту...</p>
+                                <div class="news-card-meta">
+                                    <time class="news-card-date" datetime="2025-09-12">12 вер 2025</time>
+                                    <a href="#" class="news-card-btn">Читати далі</a>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="news-item">
+                            <article class="news-card">
+                                <figure class="news-image">
+                                    <img src="assets/imgs/arashiyma-seuh.png" alt="React" loading="lazy"
+                                        decoding="async">
+                                </figure>
+                                <h3 class="news-card-title">React</h3>
+                                <p class="news-card-excerpt">Вивчення можливості створення сторінки за допомогою
+                                    React Lorem ipsum dolor sit amet consectetur.</p>
+                                <div class="news-card-meta">
+                                    <time class="news-card-date" datetime="2025-09-15">15 вер 2025</time>
+                                    <a href="#" class="news-card-btn">Читати далі</a>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
 
-
-    <!-- секція для списку переваг -->
-    <section aria-labelledby="benefits-title" class="benefits">
-        <h3 id="benefits-title">Our Advantages</h3>
-        <ul class="advantages">
-            <li>High-quality technology</li>
-            <li>Company focused on customers</li>
-            <li>Quick response to requests</li>
-        </ul>
-    </section>
-
-    <!-- aria-labelledby="services-title" для скрінрідерів, це допомогає людям з обмеженими можливосятми розуміти, про що йде мова -->
-
-    <!-- додатковий контент -->
-    <!-- aria-label="Additional Information" для доступності -->
-    <aside class="sidebar sidebar--links" aria-label="Additional Information">
-        <h3 class="sidebar__title">Useful Resources</h3>
-        <ul class="sidebar__list">
-            <li class="sidebar__item"><a class="sidebar__link" href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></li>
-        </ul>
-    </aside>
-
-    <!-- підвал сторінки -->
-    <footer class="footer">
-        <p class="footer__text">© 2025 Group: 6.1213-1</p>
-    </footer>
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer-group">
+                    <h3 class="footer-title">Компанія</h3>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Головна</a></li>
+                        <li><a href="#" class="footer-link">Про нас</a></li>
+                        <li><a href="#" class="footer-link">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-group">
+                    <h3 class="footer-title">Наші контакти</h3>
+                    <ul class="footer-list">
+                        <li class="footer-item">вул. Університетська, 66Б</li>
+                        <li class="footer-item">+380 (44) 123-45-67</li>
+                    </ul>
+                </div>
+                <div class="footer-group">
+                    <h3 class="footer-title">Соціальні мережі</h3>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Facebook</a></li>
+                        <li><a href="#" class="footer-link">Instagram</a></li>
+                        <li><a href="#" class="footer-link">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer__text">© 2025 Group: 6.1213-1</p>
+        </footer>
+    </div>
 </body>
 
 </html>
