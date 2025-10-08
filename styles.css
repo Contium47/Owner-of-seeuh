@@ -63,9 +63,7 @@ a:hover { text-decoration: underline; }
 ul, ol { list-style: none; margin: 0; padding: 0; }
 
 
-/* styles.css */
 :root {
-  /* Твої старі змінні */
   --brand: #002b5c;
   --brand-light: #4a90e2;
   --accent: #ff6b35;
@@ -80,11 +78,10 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   --radius: 0.5rem;
   --shadow: 0 2px 4px rgba(0,0,0,0.1);
   
-  /* Нові для футера (щоб стилі працювали) */
-  --surface: var(--brand);  /* Темно-синій фон футера */
-  --border: #ddd;  /* Сіра межа */
-  --fg-muted: #666;  /* Мутний сірий для лейблів */
-  --container: 1200px;  /* Max-width для контенту */
+  --surface: var(--brand); 
+  --border: #ddd;  
+  --fg-muted: #666;  
+  --container: 1200px;
 }
 
 * {
@@ -120,7 +117,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 
 .layout {
   display: grid;
-  grid-template-columns: 270px 1fr;  /* Збільшили aside до 300px, main — решта */
+  grid-template-columns: 270px 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header header"
@@ -451,7 +448,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
-  grid-column: 1 / -1;  /* Повна ширина для кнопки */
+  /* grid-column: 1 / -1;git status */
 }
 
 .contact-form__button:hover,
