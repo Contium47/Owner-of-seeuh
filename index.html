@@ -15,7 +15,7 @@
     <div class="layout">
         <a href="#main" class="skip-link">Перейти до основного контенту</a>
         <header class="header">
-            <h1 class="header-title">Лабораторна №4</h1>
+            <h1 class="header__title">Лабораторна №4</h1>
             <nav class="nav" aria-label="Головна навігація">
                 <a href="index.html" class="nav-link" aria-current="page">Головна</a>
                 <a href="about.html" class="nav-link">Про нас</a>
@@ -51,14 +51,16 @@
 
         <main class="main" id="main">
             <section class="news-section">
-                <h2 class="news-title">Новини</h2>
+                <h2 class="news__title">Новини</h2>
                 <div class="news-container">
                     <ul class="news-list">
                         <li class="news-item">
                             <article class="news-card">
                                 <figure class="news-image">
-                                    <img src="assets/imgs/arashiyma-seuh.png" alt="Ото зображення" loading="lazy"
-                                        decoding="async">
+                                    <picture>
+                                        <img src="assets/imgs/arashiyma-seuh.avif" alt="Демонстрація навчання" loading="lazy"
+                                            decoding="async">
+                                    </picture>
                                 </figure>
                                 <h3 class="news-card-title">Створення першого проекту</h3>
                                 <p class="news-card-excerpt">Тимчасовий текст для демонстрації можливості створення
@@ -72,8 +74,10 @@
                         <li class="news-item">
                             <article class="news-card">
                                 <figure class="news-image">
-                                    <img src="assets/imgs/arashiyma-seuh.png" alt="Демонстрація навчання" loading="lazy"
-                                        decoding="async">
+                                    <picture>
+                                        <img src="assets/imgs/arashiyma-seuh.avif" alt="Демонстрація навчання" loading="lazy"
+                                            decoding="async">
+                                    </picture>
                                 </figure>
                                 <h3 class="news-card-title">Flexbox + Grid: практика</h3>
                                 <p class="news-card-excerpt">Для отримання навичок побудови каркасу сторінки на
@@ -87,8 +91,10 @@
                         <li class="news-item">
                             <article class="news-card">
                                 <figure class="news-image">
-                                    <img src="assets/imgs/arashiyma-seuh.png" alt="React" loading="lazy"
-                                        decoding="async">
+                                    <picture>
+                                        <img src="assets/imgs/arashiyma-seuh.avif" alt="Демонстрація навчання" loading="lazy"
+                                            decoding="async">
+                                    </picture>
                                 </figure>
                                 <h3 class="news-card-title">React</h3>
                                 <p class="news-card-excerpt">Вивчення можливості створення сторінки за допомогою
@@ -123,11 +129,12 @@
                 </div>
                 <div class="footer-group">
                     <h3 class="footer-title">Соціальні мережі</h3>
-                    <ul class="footer-list">
-                        <li><a href="#" class="footer-link">Facebook</a></li>
-                        <li><a href="#" class="footer-link">Instagram</a></li>
-                        <li><a href="#" class="footer-link">LinkedIn</a></li>
-                    </ul>
+                    <address>
+                        <ul class="footer-list">
+                            <li class="footer-item">вул. Університетська, 66Б</li>
+                            <li class="footer-item">+380 (44) 123-45-67</li>
+                        </ul>
+                    </address>
                 </div>
             </div>
             <p class="footer__text">© 2025 Group: 6.1213-1</p>
