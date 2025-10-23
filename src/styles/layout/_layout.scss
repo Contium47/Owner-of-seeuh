@@ -1,8 +1,14 @@
+@use '../abstracts/vars' as vars;
+
 .layout {
   display: grid;
   grid-template-columns: 430px 1fr;
   grid-template-rows: auto auto 1fr auto;
-  grid-template-areas: "header" "sidenav" "main" "footer";
+  grid-template-areas:
+    "header"
+    "sidenav"
+    "main"
+    "footer";
   min-height: 100dvh;
 }
 

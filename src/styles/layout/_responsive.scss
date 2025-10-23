@@ -1,3 +1,5 @@
+@use '../abstracts/vars' as vars;
+
 @media (min-width: 640px) {
   .layout {
     grid-template-columns: 270px 1fr;

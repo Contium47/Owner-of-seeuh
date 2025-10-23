@@ -1,10 +1,20 @@
-@use 'abstracts/_index' as *;  // Змінні, mixins
+// abstracts
+@use './abstracts/vars' as vars;
+@use './abstracts/mixins' as mixins;
 
-@use 'base/_reset';
-@use 'base/_theme-dark';
+// base
+@use './base/reset' as *;
+@use './base/base' as *;
+@use './base/theme-dark' as *;
 
-@forward 'layout/_layout';
-@forward 'layout/_sidenav';
-@forward 'components/_media';
-@forward 'components/_contact-form';
-@forward 'responsive';
+// components
+@use './components/contact-form' as *;
+@use './components/media' as *;
+
+// layout
+@use './layout/header' as *;
+@use './layout/footer' as *;
+@use './layout/layout' as *;
+@use './layout/main' as *;
+@use './layout/sidenav' as *;
+@use './layout/responsive' as *;

@@ -1,45 +1,45 @@
-// :root (light default)
+@use '../abstracts/vars' as vars;
+
 :root {
-  --brand: #{$brand};
-  --brand-light: #{$brand-light};
-  --accent: #{$accent};
-  --bg: #{$bg};
-  --text: #{$text};
-  --space-1: #{$space-1};
-  --space-2: #{$space-2};
-  --space-3: #{$space-3};
-  --space-4: #{$space-4};
-  --space-5: #{$space-5};
-  --space-6: #{$space-6};
-  --radius: #{$radius};
-  --shadow: #{$shadow};
+  --brand: #{vars.$brand};
+  --brand-light: #{vars.$brand-light};
+  --accent: #{vars.$accent};
+  --bg: #{vars.$bg};
+  --text: #{vars.$text};
+  --space-1: #{vars.$space-1};
+  --space-2: #{vars.$space-2};
+  --space-3: #{vars.$space-3};
+  --space-4: #{vars.$space-4};
+  --space-5: #{vars.$space-5};
+  --space-6: #{vars.$space-6};
+  --radius: #{vars.$radius};
+  --shadow: #{vars.$shadow};
   --surface: var(--brand);
-  --border: #{$border};
-  --fg-muted: #{$fg-muted};
-  --container: #{$container};
-  --fs-body: #{$fs-body};
-  --fs-h1: #{$fs-h1};
-  --fs-h2: #{$fs-h2};
+  --border: #{vars.$border};
+  --fg-muted: #{vars.$fg-muted};
+  --container: #{vars.$container};
+  --fs-body: #{vars.$fs-body};
+  --fs-h1: #{vars.$fs-h1};
+  --fs-h2: #{vars.$fs-h2};
 }
 
-// Dark theme
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b1020;
-    --surface: #101528;
-    --fg: #e7eaf3;
-    --fg-muted: #b7bfd3;
-    --border: #232a3b;
-    --brand: #7fb3ff;
-    --brand-600: #6aa2f0;
-    --brand-100: #17233b;
-  }
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --bg: #0b1020;
+//     --surface: #101528;
+//     --fg: #e7eaf3;
+//     --fg-muted: #b7bfd3;
+//     --border: #232a3b;
+//     --brand: #7fb3ff;
+//     --brand-600: #6aa2f0;
+//     --brand-100: #17233b;
+//   }
 
-  .sidebar {
-    background: var(--surface);
-  }
+//   .sidebar {
+//     background: var(--surface);
+//   }
 
-  .news-card-meta {
-    background: color-mix(in srgb, var(--surface), 92%, #fff, 8%);
-  }
-}
+//   .news-card-meta {
+//     background: color-mix(in srgb, var(--surface), 92%, #fff, 8%);
+//   }
+// }

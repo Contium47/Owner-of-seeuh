@@ -1,29 +1,32 @@
+@use '../abstracts/vars' as vars;
+@use '../abstracts/mixins' as mixins;
+
 .header {
-  background: var(--brand);
-  padding: $space-4 $space-5;
-  border-bottom: 1px solid var(--brand-light);
+  background: vars.$brand;
+  padding: vars.$space-4 vars.$space-5;
+  border-bottom: 1px solid vars.$brand-light;
 
   &__title {
-    margin: $space-2 0;
-    font-size: $fs-h1;
+    margin: vars.$space-2 0;
+    font-size: vars.$fs-h1;
     color: white;
   }
 }
 
 .nav {
   display: flex;
-  gap: $space-2;
-  border-top: 1px solid var(--brand-light);
+  gap: vars.$space-2;
+  border-top: 1px solid vars.$brand-light;
 
   &-link {
-    color: var(--brand-light);
+    color: vars.$brand-light;
     font-weight: 600;
-    padding: $space-1 0;
-    border-radius: $radius;
+    padding: vars.$space-1 0;
+    border-radius: vars.$radius;
 
     &:hover {
-      background: var(--brand-light);
-      color: var(--brand);
+      background: vars.$brand-light;
+      color: vars.$brand;
     }
 
     &--cta {

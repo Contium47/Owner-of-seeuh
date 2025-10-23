@@ -1,3 +1,5 @@
+@use '../abstracts/vars' as vars;
+
 html {
   font-size: 16px;
 }
@@ -7,15 +9,15 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
-  font-size: $fs-body;
+  font-size: vars.$fs-body;
 }
 
 a {
-  color: $brand;
-}
+  color: vars.$brand;
 
-a:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 ul, ol {
