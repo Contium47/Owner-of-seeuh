@@ -1,0 +1,80 @@
+.footer {
+  background: var(--surface);
+  color: white;
+  border-top: 1px solid var(--border);
+  padding: $space-3 0;
+  margin-top: auto;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-3;
+    max-width: $container;
+    margin: 0 auto;
+    padding: 0 $space-5;
+    align-items: start;
+  }
+
+  &-group {
+    display: flex;
+    flex-direction: column;
+
+    address ul {
+      display: grid;
+      gap: $space-1;
+
+      .footer-item {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: $space-1;
+        align-items: baseline;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 1rem;
+    margin-bottom: $space-2;
+    color: var(--brand-light);
+    font-weight: 700;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &-item {
+    color: white;
+  }
+
+  &-link {
+    color: white;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      color: $accent;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    padding-top: $space-2;
+    border-top: 1px solid var(--border);
+    margin: 0 $space-5;
+    font-size: 0.9rem;
+    color: white;
+  }
+
+  &-label {
+    color: var(--fg-muted);
+    white-space: nowrap;
+    font-weight: 600;
+  }
+}

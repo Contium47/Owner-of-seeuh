@@ -1,0 +1,33 @@
+.header {
+  background: var(--brand);
+  padding: $space-4 $space-5;
+  border-bottom: 1px solid var(--brand-light);
+
+  &__title {
+    margin: $space-2 0;
+    font-size: $fs-h1;
+    color: white;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: $space-2;
+  border-top: 1px solid var(--brand-light);
+
+  &-link {
+    color: var(--brand-light);
+    font-weight: 600;
+    padding: $space-1 0;
+    border-radius: $radius;
+
+    &:hover {
+      background: var(--brand-light);
+      color: var(--brand);
+    }
+
+    &--cta {
+      margin-left: auto;
+    }
+  }
+}

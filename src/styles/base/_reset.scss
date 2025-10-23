@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+  display: block;
+}
+
+address {
+  font-style: normal;
+}
+
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+button, input[type="submit"] {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input:focus, textarea:focus, button:focus {
+  @include focus-outline;
+}

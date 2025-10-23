@@ -1,0 +1,43 @@
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.sidebar {
+  background: white;
+  border: 1px solid var(--border);
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+
+  &__title {
+    margin-bottom: var(--space-3);
+    font-size: 1rem;
+    color: var(--brand);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__item {
+    color: var(--fg);
+  }
+
+  &__link {
+    color: var(--brand);
+    padding: var(--space-1);
+    border-radius: var(--radius);
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      background: var(--bg);
+      color: var(--accent);
+    }
+  }
+}
