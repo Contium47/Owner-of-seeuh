@@ -1,0 +1,116 @@
+<!-- contacts.html з BEM-методологією та інтеграцією в layout лаб №4 -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Сторінка контактів." />
+    <link rel="icon" href="/assets/favicon-K8px7mgb.ico">
+    <title>Контакти - Лабораторна №4</title>
+  <script type="module" crossorigin src="/assets/main-BG6ep5al.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-D-52W8HQ.css">
+</head>
+<body>
+    <div class="layout">
+        <a href="#main" class="skip-link">Перейти до основного контенту</a>
+        <header class="header">
+            <h1 class="header-title">Лабораторна №4</h1>
+            <nav class="nav" aria-label="Головна навігація">
+                <a href="index.html" class="nav-link">Головна</a>
+                <a href="about.html" class="nav-link">Про нас</a>
+                <a href="contacts.html" class="nav-link nav-link--cta" aria-current="page">Контакти</a>
+            </nav>
+        </header>
+
+        <aside class="sidenav">
+            <section class="sidebar sidebar--links" aria-label="Корисні посилання">
+                <h2 class="sidebar__title">Корисні посилання</h2>
+                <ul class="sidebar__list">
+                    <li class="sidebar__item"><a href="https://developer.mozilla.org/" class="sidebar__link" target="_blank" rel="noopener">MDN Web Docs</a></li>
+                </ul>
+            </section>
+            <section class="sidebar sidebar--values" aria-label="Цінності">
+                <h2 class="sidebar__title">Цінності</h2>
+                <ul class="sidebar__list">
+                    <li class="sidebar__item">Якість коду та прозорість</li>
+                    <li class="sidebar__item">Навчання через практику</li>
+                    <li class="sidebar__item">Комунікація та підтримка</li>
+                </ul>
+            </section>
+            <section class="sidebar sidebar--social" aria-label="Соціальні мережі">
+                <h2 class="sidebar__title">Соціальні мережі</h2>
+                <ul class="sidebar__list">
+                    <li class="sidebar__item"><a href="#" class="sidebar__link">Facebook</a></li>
+                    <li class="sidebar__item"><a href="#" class="sidebar__link">Instagram</a></li>
+                    <li class="sidebar__item"><a href="#" class="sidebar__link">LinkedIn</a></li>
+                </ul>
+            </section>
+        </aside>
+
+        <main class="main" id="main">
+            <section class="contact-section" aria-labelledby="contact-section__title">
+                <h2 id="contact-section__title" class="contact-section__title">Зв'яжіться з нами</h2>
+                <p class="contact-section__description">Будь ласка, заповніть форму нижче, і ми з вами зв’яжемося.</p>
+
+                <form action="#" method="post" class="contact-form">
+                    <div class="contact-form__row">
+                        <label for="name" class="contact-form__label">Ім’я:</label>
+                        <input type="text" id="name" name="name" class="contact-form__input" placeholder="Ваше ім’я" required minlength="2" maxlength="25" pattern="[A-Za-zА-Яа-яІіЇїЄєҐґ'\- ]{2,25}" title="Ім'я може містити лише літери, апостроф або дефіс">
+                    </div>
+
+                    <div class="contact-form__row">
+                        <label for="email" class="contact-form__label">Email:</label>
+                        <input type="email" id="email" name="email" class="contact-form__input" placeholder="Ваш email" required>
+                    </div>
+
+                    <div class="contact-form__row">
+                        <label for="phone" class="contact-form__label">Телефон:</label>
+                        <input type="tel" id="phone" name="phone" class="contact-form__input" placeholder="+380 00 000 00 00" required pattern="^\+380\d{9}$" title="Телефон у форматі: +380XXXXXXXXX">
+                    </div>
+
+                    <div class="contact-form__row">
+                        <label for="msg" class="contact-form__label">Повідомлення:</label>
+                        <textarea id="msg" name="msg" class="contact-form__textarea" placeholder="Ваше повідомлення" rows="5" required minlength="10" maxlength="300"></textarea>
+                    </div>
+
+                    <div class="contact-form__row">
+                        <button type="submit" class="contact-form__button">Відправити</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer-group">
+                    <h3 class="footer-title">Компанія</h3>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Головна</a></li>
+                        <li><a href="#" class="footer-link">Про нас</a></li>
+                        <li><a href="#" class="footer-link">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-group">
+                    <h3 class="footer-title">Наші контакти</h3>
+                    <address>
+                        <ul class="footer-list">
+                            <li class="footer-item">вул. Університетська, 66Б</li>
+                            <li class="footer-item">+380 (44) 123-45-67</li>
+                        </ul>
+                    </address>
+                </div>
+                <div class="footer-group">
+                    <h3 class="footer-title">Соціальні мережі</h3>
+                    <ul class="footer-list">
+                        <li><a href="#" class="footer-link">Facebook</a></li>
+                        <li><a href="#" class="footer-link">Instagram</a></li>
+                        <li><a href="#" class="footer-link">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer__text">© 2025 Group: 6.1213-1</p>
+        </footer>
+    </div>
+
+</body>
+</html>
