@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head pageTitle=pageTitle }}
+</head>
+
+<body>
+    <div class="layout">
+        {{> header }}
+        {{> aside }}
+
+        <main class="main">
+            {{> partial-block }}
+        </main>
+        {{> footer studentGroup=studentGroup }}
+    </div>
+
+    <!-- підключаємо JS для SCSS та іншого -->
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
