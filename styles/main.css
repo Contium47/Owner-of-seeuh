@@ -93,6 +93,24 @@ ul, ol {
   --fs-h2: clamp(1.25rem, 0.94rem + 0.5vw, 1.6rem);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1020;
+    --surface: #101528;
+    --fg: #e7eaf3;
+    --fg-muted: #b7bfd3;
+    --border: #232a3b;
+    --brand: #7fb3ff;
+    --brand-600: #6aa2f0;
+    --brand-100: #17233b;
+  }
+  .sidebar {
+    background: var(--surface);
+  }
+  .news-card-meta {
+    background: color-mix(in srgb, var(--surface), 92%, #fff, 8%);
+  }
+}
 .about-article {
   margin-bottom: 2rem;
   padding: 1.5rem;
