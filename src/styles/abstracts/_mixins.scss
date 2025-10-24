@@ -1,0 +1,23 @@
+@use './vars' as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin media-mobile {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin card-shadow {
+  box-shadow: $shadow;
+}
+
+@mixin focus-outline {
+  outline: none;
+  border-color: $accent;
+  box-shadow: 0 0 0 2px rgba($accent, 0.1);
+}

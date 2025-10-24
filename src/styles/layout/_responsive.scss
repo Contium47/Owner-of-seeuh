@@ -1,0 +1,23 @@
+@use '../abstracts/vars' as vars;
+
+@media (min-width: 640px) {
+  .layout {
+    grid-template-columns: 270px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: "header header" "sidenav main" "footer footer";
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr minmax(220px, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 300px 1fr;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr minmax(280px, 1fr);
+  }
+}

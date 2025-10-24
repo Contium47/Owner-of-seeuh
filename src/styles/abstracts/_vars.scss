@@ -1,0 +1,23 @@
+$brand: #002b5c;
+$brand-light: #4a90e2;
+$accent: #ff6b35;
+$bg: #f8f9fa;
+$text: #333;
+$border: #ddd;
+$fg-muted: #666;
+$surface: $brand;
+
+$space-1: 0.5rem;
+$space-2: 1rem;
+$space-3: 1.5rem;
+$space-4: 2rem;
+$space-5: 3rem;
+$space-6: 4rem;
+
+$radius: 0.5rem;
+$shadow: 0 2px 4px rgba(0,0,0,0.1);
+$container: 1200px;
+
+$fs-body: clamp(1rem, 0.94rem + 0.5vw, 1.125rem);
+$fs-h1: clamp(1.5rem, 1.65rem + 1.2vw, 2.25rem);
+$fs-h2: clamp(1.25rem, 0.94rem + 0.5vw, 1.6rem);

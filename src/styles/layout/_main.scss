@@ -1,0 +1,16 @@
+@use '../abstracts/vars' as vars;
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: vars.$brand;
+  color: white;
+  padding: vars.$space-1 vars.$space-2;
+  text-decoration: none;
+  z-index: 100;
+
+  &:focus {
+    top: 6px;
+  }
+}

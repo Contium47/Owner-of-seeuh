@@ -1,0 +1,36 @@
+@use '../abstracts/vars' as vars;
+@use '../abstracts/mixins' as mixins;
+
+.header {
+  background: vars.$brand;
+  padding: vars.$space-4 vars.$space-5;
+  border-bottom: 1px solid vars.$brand-light;
+
+  &__title {
+    margin: vars.$space-2 0;
+    font-size: vars.$fs-h1;
+    color: white;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: vars.$space-2;
+  border-top: 1px solid vars.$brand-light;
+
+  &-link {
+    color: vars.$brand-light;
+    font-weight: 600;
+    padding: vars.$space-1 0;
+    border-radius: vars.$radius;
+
+    &:hover {
+      background: vars.$brand-light;
+      color: vars.$brand;
+    }
+
+    &--cta {
+      margin-left: auto;
+    }
+  }
+}

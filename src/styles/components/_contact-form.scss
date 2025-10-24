@@ -1,0 +1,140 @@
+@use '../abstracts/vars' as vars;
+@use '../abstracts/mixins' as mixins;
+
+.about-article {
+  margin-bottom: vars.$space-4;
+  padding: vars.$space-3;
+  background: white;
+  border-radius: vars.$radius;
+  @include mixins.card-shadow;
+}
+
+.about-title {
+  font-size: 1.8rem;
+  color: vars.$brand;
+  margin-bottom: vars.$space-2;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: vars.$text;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.skills-section {
+  padding: vars.$space-3;
+  background: vars.$bg;
+  border-radius: vars.$radius;
+}
+
+.skills-title {
+  font-size: 1.5rem;
+  color: vars.$brand;
+  margin-bottom: vars.$space-2;
+  text-align: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-1;
+}
+
+.skills-item {
+  padding: vars.$space-2;
+  background: white;
+  border-radius: vars.$radius;
+  text-align: center;
+  font-weight: 600;
+  color: vars.$brand;
+  @include mixins.card-shadow;
+}
+
+.contact-section {
+  padding: vars.$space-4;
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: vars.$radius;
+  @include mixins.card-shadow;
+}
+
+.contact-section__title {
+  font-size: 1.75rem;
+  color: vars.$brand;
+  margin-bottom: vars.$space-2;
+  text-align: center;
+  font-weight: 600;
+}
+
+.contact-section__description {
+  font-size: 1rem;
+  color: vars.$text;
+  text-align: center;
+  margin-bottom: vars.$space-4;
+  line-height: 1.5;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-3;
+
+  &__row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: vars.$space-2;
+    align-items: start;
+  }
+
+  &__label {
+    font-weight: 600;
+    color: vars.$brand;
+    white-space: nowrap;
+    padding-top: 0.5rem;
+  }
+
+  &__input,
+  &__textarea {
+    padding: vars.$space-2;
+    border: 1px solid var(--border);
+    border-radius: vars.$radius;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+
+    &:focus {
+      @include mixins.focus-outline;
+    }
+
+    &:invalid {
+      border-color: #e74c3c;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  &__button {
+    justify-self: start;
+    background: vars.$brand;
+    color: white;
+    padding: vars.$space-3 vars.$space-4;
+    border: none;
+    border-radius: vars.$radius;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: vars.$brand-light;
+      @include mixins.focus-outline;
+    }
+  }
+}
