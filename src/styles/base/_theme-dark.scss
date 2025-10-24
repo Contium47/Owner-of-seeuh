@@ -1,9 +1,9 @@
 @use '../abstracts/vars' as vars;
 
 :root {
-  --brand: #{vars.$brand};
-  --brand-light: #{vars.$brand-light};
-  --accent: #{vars.$accent};
+  --brand: var(--color-brand);
+  --brand-light: var(--color-brand-light);
+  --accent: var(--color-accent);
   --bg: #{vars.$bg};
   --text: #{vars.$text};
   --space-1: #{vars.$space-1};

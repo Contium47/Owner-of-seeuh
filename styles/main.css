@@ -71,9 +71,9 @@ ul, ol {
 }
 
 :root {
-  --brand: #002b5c;
-  --brand-light: #4a90e2;
-  --accent: #ff6b35;
+  --brand: var(--color-brand);
+  --brand-light: var(--color-brand-light);
+  --accent: var(--color-accent);
   --bg: #f8f9fa;
   --text: #333;
   --space-1: 0.5rem;
