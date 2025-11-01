@@ -5,18 +5,25 @@
     {{> head pageTitle=pageTitle }}
 </head>
 
-<body>
+<body data-page-code="{{ pageCode }}">
     <div class="layout">
         {{> header }}
         {{> aside }}
 
         <main class="main">
-            {{> partial-block }}
+            {{#if (eq pageCode 'about')}}
+                {{> about-content }}
+            {{else if (eq pageCode 'main')}}
+                {{> main-content }}
+            {{else if (eq pageCode 'contacts')}}
+                {{> contacts-content }}
+            {{else}}
+                {{> partial-block }}
+            {{/if}}
         </main>
         {{> footer studentGroup=studentGroup }}
     </div>
 
-    <!-- підключаємо JS для SCSS та іншого -->
     <script type="module" src="/src/main.js"></script>
 </body>
 

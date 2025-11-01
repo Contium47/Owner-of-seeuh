@@ -2,7 +2,7 @@
 
 .footer {
   background: var(--surface);
-  color: white;
+  color: black;
   border-top: 1px solid var(--border);
   padding: vars.$space-3 0;
   margin-top: auto;
@@ -51,11 +51,11 @@
   }
 
   &-item {
-    color: white;
+    color: var(--fg);
   }
 
   &-link {
-    color: white;
+    color: var(--fg);
     text-decoration: none;
 
     &:hover,

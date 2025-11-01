@@ -1,15 +1,11 @@
 @import "tailwindcss";
 
-@theme static {
-    --color-brand: #002b5c;
-    --color-brand-light: #4a90e2;
-    --color-accent: #ff6b35;
-}
-
-@layer base {
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: bold;
-    }
+@theme {
+  --color-brand: var(--brand, #002b5c);
+  --color-brand-dark: var(--brand, #7fb3ff);
+  --color-accent: var(--accent, #ff6b35);
+  --color-bg: var(--bg, white);
+  --color-text: var(--text, #333);
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

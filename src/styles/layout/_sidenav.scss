@@ -7,9 +7,14 @@
   padding: vars.$space-3;
 }
 
+.sidebar .sidebar-nav--links {
+  color: white;
+}
+
 .sidebar {
-  background: white;
+  background: var(--brand-100);
   border: 1px solid var(--border);
+  color: var(--fg);
   padding: vars.$space-4;
   border-radius: vars.$radius;
   box-shadow: var(--shadow);
@@ -17,7 +22,7 @@
   &__title {
     margin-bottom: vars.$space-3;
     font-size: 1rem;
-    color: vars.$brand;
+    color: var(--fg);
   }
 
   &__list {
@@ -31,7 +36,7 @@
   }
 
   &__link {
-    color: vars.$brand;
+    color: var(--fg);
     padding: vars.$space-1;
     border-radius: vars.$radius;
     text-decoration: none;
