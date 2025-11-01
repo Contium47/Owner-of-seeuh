@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: vars.$brand;
+  color: vars.$brand-light;
 
   &:hover {
     text-decoration: underline;

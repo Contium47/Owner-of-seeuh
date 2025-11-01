@@ -1,6 +1,7 @@
 <!-- about.html -->
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,23 +9,48 @@
     <link rel="icon" href="assets/imgs/favicon.ico">
     <title>Про нас - Лабораторна №4</title>
 </head>
+
 <body>
     <div class="layout">
         <a href="#main" class="skip-link">Перейти до основного контенту</a>
         <header class="header">
-            <h1 class="header-title">Лабораторна №4</h1>
-            <nav class="nav" aria-label="Головна навігація">
-                <a href="index.html" class="nav-link">Головна</a>
-                <a href="about.html" class="nav-link" aria-current="page">Про нас</a>
-                <a href="contacts.html" class="nav-link nav-link--cta">Контакти</a>
-            </nav>
+            <h1 class="header__title">Лабораторна №8</h1>
+            <div class="flex justify-between border border-solid space-x-6">
+                <nav class="nav" aria-label="Головна навігація">
+                    <a href="index.html" class="nav__link text-white">Головна</a>
+                    <a href="about.html" class="nav__link">Про нас</a>
+                    <a href="contacts.html" class="nav__link">Контакти</a>
+                </nav>
+                <button id="theme-toggle" class="
+                            p-2 rounded-full
+                            transition duration-300 ease-in-out
+                            focus:outline-none focus:ring-2
+                            cursor-pointer
+                        " type="button" aria-label="Переключити тему">
+                    <svg id="sun-icon"
+                        class="h-6 w-6 text-yellow-500 block dark:hidden transition-transform duration-300"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" />
+                    </svg>
+                    <svg id="moon-icon"
+                        class="h-6 w-6 text-blue-300 hidden dark:block transition-transform duration-300"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.585.732-3.755A9.726 9.726 0 002.25 12c0 5.385 4.365 9.75 9.75 9.75s9.75-4.365 9.75-9.75c0-.85-.147-1.67-.418-2.438z" />
+                    </svg>
+                </button>
+            </div>
         </header>
 
         <aside class="sidenav">
             <section class="sidebar sidebar-nav--links" aria-label="Корисні посилання">
                 <h2 class="sidebar__title">Корисні посилання</h2>
                 <ul class="sidebar__list">
-                    <li class="sidebar__item"><a href="https://developer.mozilla.org/" class="sidebar__link" target="_blank" rel="noopener">MDN Web Docs</a></li>
+                    <li class="sidebar__item"><a href="https://developer.mozilla.org/" class="sidebar__link"
+                            target="_blank" rel="noopener">MDN Web Docs</a></li>
                 </ul>
             </section>
             <section class="sidebar sidebar-nav--links" aria-label="Цінності">
@@ -45,10 +71,32 @@
             </section>
         </aside>
 
-            <article class="about-article">
-                <h2 class="about-title">Про нас</h2>
-                <p class="about-text">Компанія займається веб-розробкою.</p>
-            </article>
+        <section class="team" aria-labelledby="team-title">
+            <h2 id="team-title" class="team__title">Наша команда</h2>
+
+            <div class="team__list flex justify-between" id="team-list">
+            </div>
+
+            <template id="employee-card-tpl">
+                <article class="card employee-card" data-employee-id="">
+                    <img class="employee-card__photo" src="" alt="" width="320" height="240" loading="lazy"
+                        decoding="async">
+
+                    <div class="employee-card__body">
+                        <h3 class="employee-card__name"></h3>
+                        <p class="employee-card__role"></p>
+
+                        <a href="" class="btn btn--brand employee-card__cta" target="_blank" rel="noopener noreferrer">
+                            Детальніше
+                        </a>
+                    </div>
+                </article>
+            </template>
+        </section>
+
+        <article class="about-article">
+            <h2 class="about-title">Про нас</h2>
+            <p class="about-text">Компанія займається веб-розробкою.</p>
             <section class="skills-section">
                 <h2 class="skills-title">Навички</h2>
                 <ul class="skills-list">
@@ -57,6 +105,7 @@
                     <li class="skills-item">JavaScript</li>
                 </ul>
             </section>
+        </article>
 
         <footer class="footer">
             <div class="footer__inner">
@@ -91,4 +140,5 @@
 
     <script src="src/main.js" type="module"></script>
 </body>
+
 </html>

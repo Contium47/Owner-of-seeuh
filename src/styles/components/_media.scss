@@ -9,7 +9,7 @@
   margin: 0 vars.$space-4 vars.$space-3;
   font-size: vars.$fs-h2;
   font-weight: 700;
-  color: vars.$brand;
+  color: vars.$brand-light;
   line-height: 1.2;
   text-align: center;
 }
@@ -65,7 +65,7 @@
   margin: vars.$space-3 vars.$space-3 vars.$space-2;
   font-size: 1.25rem;
   font-weight: 600;
-  color: vars.$brand;
+  color: var(--brand);
   line-height: 1.3;
 }
 

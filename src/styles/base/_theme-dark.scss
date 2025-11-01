@@ -1,45 +1,28 @@
 @use '../abstracts/vars' as vars;
 
 :root {
-  --brand: var(--color-brand);
-  --brand-light: var(--color-brand-light);
-  --accent: var(--color-accent);
+  // Light theme vars (як є)
   --bg: #{vars.$bg};
   --text: #{vars.$text};
-  --space-1: #{vars.$space-1};
-  --space-2: #{vars.$space-2};
-  --space-3: #{vars.$space-3};
-  --space-4: #{vars.$space-4};
-  --space-5: #{vars.$space-5};
-  --space-6: #{vars.$space-6};
-  --radius: #{vars.$radius};
-  --shadow: #{vars.$shadow};
-  --surface: var(--brand);
+  --surface: vars.$brand;
   --border: #{vars.$border};
   --fg-muted: #{vars.$fg-muted};
-  --container: #{vars.$container};
-  --fs-body: #{vars.$fs-body};
-  --fs-h1: #{vars.$fs-h1};
-  --fs-h2: #{vars.$fs-h2};
+  --brand: #{vars.$brand};
+  --brand-light: #{vars.$brand-light};
+  --brand-100: #{vars.$bg};  // Або твій колір
+  // ... інші vars
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b1020;
-    --surface: #101528;
-    --fg: #e7eaf3;
-    --fg-muted: #b7bfd3;
-    --border: #232a3b;
-    --brand: #7fb3ff;
-    --brand-600: #6aa2f0;
-    --brand-100: #17233b;
-  }
-
-  .sidebar {
-    background: var(--surface);
-  }
-
-  .news-card-meta {
-    background: color-mix(in srgb, var(--surface), 92%, #fff, 8%);
-  }
+// Class-based dark (замість @media)
+.dark {
+  --bg: #0b1020;
+  --surface: #101528;
+  --fg: #e7eaf3;
+  --fg-muted: #b7bfd3;
+  --border: #232a3b;
+  --brand: #7fb3ff;
+  --brand-100: #17233b;  // Твій dark колір для новин
 }
+
+// Видали весь @media (prefers-color-scheme: dark) блок!
+// Тепер JS керує всім
